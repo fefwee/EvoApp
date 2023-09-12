@@ -1,0 +1,17 @@
+.container {
+    padding: 15px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn {
+    padding: 15px 40px;
+    border-radius: 10px;
+    border: none;
+    transition: 0.5s all ease;
+    margin: 20px;
+}
+
+.btn:hover {
+    box-shadow: 1px 3px 3px rgb(255, 255, 255);
+}
