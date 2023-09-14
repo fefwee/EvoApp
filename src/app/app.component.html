@@ -1,0 +1,11 @@
+<div>
+  <p>pipe custom: {{ number | add_five }}</p>
+  <div>pipe date: {{ date | date : "dd/MM/yyyy" }}</div>
+  <div class="container">
+    <ul *ngFor="let user of usersArray">
+      <li>Name: {{ user.name }}</li>
+      <li>Age: {{ user.age }}</li>
+      <li>Id: {{ user.id }}</li>
+    </ul>
+  </div>
+</div>

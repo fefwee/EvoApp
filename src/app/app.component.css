@@ -1,0 +1,19 @@
+.container {
+    width: 400px;
+    height: 300px;
+}
+
+ul {
+    padding: 10px;
+    box-shadow: 2px 3px 3px rgb(211, 207, 207);
+    border-radius: 10px;
+}
+
+li {
+    padding: 3px;
+    list-style: none;
+}
+
+* {
+    font-size: 20px;
+}
