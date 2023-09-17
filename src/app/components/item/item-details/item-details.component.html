@@ -1,0 +1,12 @@
+<div class="container">
+  <p>Items:id</p>
+  <button routerLink="details" class="btn">Details</button>
+  <button
+    routerLink="list"
+    [queryParams]="{ list: '1', enable: true }"
+    class="btn"
+  >
+    List
+  </button>
+  <router-outlet></router-outlet>
+</div>
