@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width: 95%;
+    height: 300px;
+}
+
+.btn {
+    border: none;
+    border-radius: 10px;
+    padding: 15px 40px;
+    box-shadow: 1px 1px rgb(186, 183, 183);
+    margin: 10px 10px;
+    background-color: aliceblue;
+}

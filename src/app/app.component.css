@@ -1,0 +1,7 @@
+.tabs {
+    width: 100%;
+    padding: 40px;
+    box-shadow: 1px 4px rgb(138, 135, 135);
+    margin: 10px auto;
+    border: 1px solid rgb(200, 195, 195);
+}
