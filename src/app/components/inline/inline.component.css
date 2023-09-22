@@ -1,0 +1,9 @@
+.container {
+    width: 100%;
+    height: 300px;
+    background-color: rgba(163, 168, 172, 0.251);
+}
+
+.container p {
+    padding: 20px;
+}

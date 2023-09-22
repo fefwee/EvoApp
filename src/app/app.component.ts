@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'EvoApp';
+
+  constructor(private meta: Meta) {
+    this.meta.addTag({ property: "og:desc", content: "root_desc " })
+  }
 }

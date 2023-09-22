@@ -1,0 +1,15 @@
+button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 3px rgb(220, 218, 218);
+    cursor: pointer;
+    margin: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 1px rgb(197, 191, 191);
+    background-color: aliceblue;
+}
