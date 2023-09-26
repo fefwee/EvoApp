@@ -1,0 +1,21 @@
+.container {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid rgb(215, 206, 206);
+    border-radius: 10px;
+}
+
+ul {
+    border: 1px solid rgb(201, 197, 197);
+    margin: 5px;
+    border-radius: 10px;
+}
+
+ul>li {
+    padding: 5px;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}

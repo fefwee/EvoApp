@@ -1,0 +1,8 @@
+<div class="container">
+  <ul *ngFor="let item of responseService.users">
+    <li class="red">{{ item.userId }}</li>
+    <li>{{ item.id }}</li>
+    <li>title: {{ item.title }}</li>
+    <li>completed: {{ item.completed }}</li>
+  </ul>
+</div>
