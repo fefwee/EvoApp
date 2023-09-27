@@ -1,0 +1,101 @@
+<form class="container">
+  <div class="card flex justify-content-center">
+    <span class="p-float-label">
+      <input
+        pInputText
+        minlength="2"
+        maxlength="8"
+        id="username"
+        [(ngModel)]="addNewBook.nameBook"
+        name="nameBook"
+        required
+        #name="ngModel"
+        pattern="[А-Яа-яЁё]*"
+      />
+      <label htmlFor="username">Название книги</label>
+      <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.hasError('minlength')">
+          <small id="username-help" class="p-error">
+            Мин длина 2 символа
+          </small>
+        </div>
+        <div *ngIf="name.hasError('required')">
+          <small id="username-help" class="p-error">
+            Поле должно быть заполнено
+          </small>
+        </div>
+        <div *ngIf="name.hasError('pattern')">
+          <small id="username-help" class="p-error">
+            Только русские буквы, без пробелов,
+            <br />
+            без цифр, без спец. символов
+          </small>
+        </div>
+      </div>
+    </span>
+  </div>
+  <div class="card flex justify-content-center">
+    <span class="p-float-label">
+      <input
+        pInputText
+        minlength="2"
+        maxlength="8"
+        id="username"
+        [(ngModel)]="addNewBook.auctor"
+        name="auctor"
+        required
+        #creator="ngModel"
+        pattern="[А-Яа-яЁё]*"
+      />
+      <label htmlFor="username">Автор книги</label>
+      <div *ngIf="creator.invalid && (creator.dirty || creator.touched)">
+        <div *ngIf="creator.hasError('minlength')">
+          <small id="username-help" class="p-error">
+            Мин длина 2 символа
+          </small>
+        </div>
+        <div *ngIf="creator.hasError('required')">
+          <small id="username-help" class="p-error">
+            Поле должно быть заполнено
+          </small>
+        </div>
+        <div *ngIf="creator.hasError('pattern')">
+          <small id="username-help" class="p-error">
+            Только русские буквы, без пробелов,
+            <br />
+            без цифр, без спец. символов
+          </small>
+        </div>
+      </div>
+    </span>
+  </div>
+  <div class="card flex justify-content-center">
+    <p-button
+      label="Добавить"
+      [disabled]="name.invalid || creator.invalid || undefined"
+      (onClick)="addBook()"
+    ></p-button>
+  </div>
+</form>
+
+<div>
+  <h1>Реестр книг</h1>
+  <div class="card">
+    <p-table [value]="books" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Номер</th>
+          <th>Название книги</th>
+          <th>Автор</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let let-rowIndex="rowIndex" let-book>
+        <tr>
+          <td>{{ rowIndex + 1 }}</td>
+          <td>{{ book.nameBook }}</td>
+          <td>{{ book.auctor }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
