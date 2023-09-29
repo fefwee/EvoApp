@@ -1,0 +1,39 @@
+<div class="main_container">
+  <div>
+    <div class="card flex justify-content-center box_btn">
+      <p-button
+        (onClick)="start()"
+        label="Начать вывод данных"
+        styleClass="p-button-secondary"
+      ></p-button>
+      <p-button
+        (onClick)="evenNumberUnsubscribe()"
+        label="Остановить первый поток"
+        styleClass="p-button-help"
+      ></p-button>
+      <p-button
+        (onClick)="enableMapRandomUnsubscribe()"
+        label="Остановить второй поток"
+        styleClass="p-button-warning"
+      ></p-button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="block_one">
+      <h2>Числа по порядку</h2>
+      <div>
+        <ul *ngFor="let evenNumb of evenNumbers">
+          <li>{{ evenNumb }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="block_second">
+      <h2>Рандомные числа</h2>
+      <div>
+        <ul *ngFor="let randonNumb of randomNumbers">
+          <li>{{ randonNumb }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
