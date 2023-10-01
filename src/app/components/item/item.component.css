@@ -1,0 +1,12 @@
+.container {
+    padding: 10px;
+    border: 1px solid rgb(211, 202, 202);
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+li {
+    list-style: none;
+    padding: 4px;
+}

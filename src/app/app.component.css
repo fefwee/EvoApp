@@ -1,0 +1,9 @@
+.container>* {
+    max-width: 100%;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.box_btn>* {
+    margin: 5px;
+}

@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="box_btn">
+    <p-button
+      label="Получить все посты"
+      styleClass="p-button-raised p-button-text"
+      (onClick)="getPosts()"
+    ></p-button>
+
+    <p-button
+      label="Отправить get с params postId=1"
+      styleClass="p-button-raised p-button-text p-button-secondary"
+      (onClick)="getComments()"
+    ></p-button>
+
+    <p-button
+      label="Post в body {}"
+      styleClass="p-button-raised p-button-text p-button-success"
+      (onClick)="sendBodyParam()"
+    ></p-button>
+
+    <p-button
+      label="error get"
+      styleClass="p-button-raised p-button-text p-button-info"
+      (onClick)="errors()"
+    ></p-button>
+
+    <p-button
+      label="Get с headers X-Test: 1"
+      styleClass="p-button-raised p-button-text p-button-warning"
+      (onClick)="sendHeaders()"
+    ></p-button>
+
+    <p-button
+      label="remove post"
+      styleClass="p-button-raised p-button-text p-button-danger"
+      (onClick)="removePost()"
+    ></p-button>
+    <p-button routerLink="/item" label="resolve component"></p-button>
+  </div>
+</div>
+<router-outlet></router-outlet>
