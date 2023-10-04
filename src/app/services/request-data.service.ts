@@ -16,7 +16,7 @@ export class RequestDataService {
 
   public getCommentsWitchParams() {
     return this.http.get('https://jsonplaceholder.typicode.com/comments',
-      { params: new HttpParams().set('PostId', '1') })
+      { params: new HttpParams().set('postId', '1') })
   }
 
   public sendPost() {
