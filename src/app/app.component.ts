@@ -9,7 +9,7 @@ import { EMPTY, Subscription, interval, map, switchMap } from 'rxjs';
 export class AppComponent {
 
   public evenIntervalSubscrip$: Subscription = Subscription.EMPTY;
-  public randomIntervalSubscrip$:Subscription = Subscription.EMPTY;;
+  public randomIntervalSubscrip$: Subscription = Subscription.EMPTY;;
 
   public evenNumbers: number[] = [];
   public randomNumbers: string[] = [];
@@ -20,17 +20,17 @@ export class AppComponent {
   };
 
   public evenNumber(): void {
-    if(!this.evenIntervalSubscrip$.closed){
+    if (!this.evenIntervalSubscrip$.closed) {
       return;
     }
     const evenInterval = interval(2000);
     this.evenIntervalSubscrip$ = evenInterval.subscribe((next) => {
       this.evenNumbers.push(next);
     });
-  }
+  };
 
   public enableMapRandom(): void {
-    if(!this.randomIntervalSubscrip$.closed){
+    if (!this.randomIntervalSubscrip$.closed) {
       return;
     }
     const interval$ = interval(2000);
@@ -42,10 +42,10 @@ export class AppComponent {
   };
 
   public enableMapRandomUnsubscribe() {
-    this.randomIntervalSubscrip$.unsubscribe()
-  }
+    this.randomIntervalSubscrip$.unsubscribe();
+  };
 
   public evenNumberUnsubscribe() {
-    this.evenIntervalSubscrip$.unsubscribe()
-  }
+    this.evenIntervalSubscrip$.unsubscribe();
+  };
 }
