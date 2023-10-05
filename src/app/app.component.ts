@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Subscription, interval, map } from 'rxjs';
+import { EMPTY, Subscription, interval, map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,8 @@ import { Subscription, interval, map } from 'rxjs';
 })
 export class AppComponent {
 
-  public evenIntervalSubscrip$!: Subscription;
-  public randomIntervalSubscrip$!: Subscription;
+  public evenIntervalSubscrip$: Subscription = Subscription.EMPTY;
+  public randomIntervalSubscrip$:Subscription = Subscription.EMPTY;;
 
   public evenNumbers: number[] = [];
   public randomNumbers: string[] = [];
@@ -20,6 +20,9 @@ export class AppComponent {
   };
 
   public evenNumber(): void {
+    if(!this.evenIntervalSubscrip$.closed){
+      return;
+    }
     const evenInterval = interval(2000);
     this.evenIntervalSubscrip$ = evenInterval.subscribe((next) => {
       this.evenNumbers.push(next);
@@ -27,6 +30,9 @@ export class AppComponent {
   }
 
   public enableMapRandom(): void {
+    if(!this.randomIntervalSubscrip$.closed){
+      return;
+    }
     const interval$ = interval(2000);
     this.randomIntervalSubscrip$ = interval$.pipe(
       map(() => `Random Value ${Math.floor(Math.random() * 100)}`)
