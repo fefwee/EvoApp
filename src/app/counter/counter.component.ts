@@ -11,9 +11,10 @@ export class CounterComponent {
 
   public incrementCount() {
     return this.count++
-  }
+  };
+
   public decrementCount() {
     return this.count--
-  }
+  };
 
 }
