@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.todoService.getTodo().subscribe({
-      next: (response: any) => {
+      next: (response:ItodoItem[]) => {
         this.todos = response;
       },
       error: (error: HttpErrorResponse) => {
