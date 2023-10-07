@@ -16,7 +16,7 @@ export class AppComponent {
 
   @ViewChild('dynamicComponent', { read: ViewContainerRef })
   private viewRef!: ViewContainerRef;
-  private componentRef!: ComponentRef<DynamicItemComponent>
+  private componentRef!: ComponentRef<DynamicItemComponent>;
 
   public addDynamicComponent() {
     this.viewRef.clear();
