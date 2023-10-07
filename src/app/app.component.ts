@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ComponentRef,
+  ViewChild,
+  ViewContainerRef
+} from '@angular/core';
+
+import { DynamicItemComponent } from './components/dynamic-item/dynamic-item.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +13,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'EvoApp';
+
+  @ViewChild('dynamicComponent', { read: ViewContainerRef })
+  private viewRef!: ViewContainerRef;
+  private componentRef!: ComponentRef<DynamicItemComponent>
+
+  public addDynamicComponent() {
+    this.viewRef.clear();
+    this.componentRef = this.viewRef.createComponent(DynamicItemComponent);
+  };
+  public removeComponent() {
+    this.viewRef.clear();
+  };
+
 }
+

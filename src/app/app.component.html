@@ -1,0 +1,16 @@
+<div class="container">
+  <p-button
+    (onClick)="addDynamicComponent()"
+    label="add dynamic component"
+    styleClass="p-button-danger"
+  ></p-button>
+  <p-button
+    (onClick)="removeComponent()"
+    label="clear tempalte"
+    styleClass="p-button-help"
+  ></p-button>
+</div>
+
+<ng-container>
+  <ng-template #dynamicComponent></ng-template>
+</ng-container>
