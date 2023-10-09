@@ -1,0 +1,27 @@
+<div class="card">
+  <p-menubar [model]="items">
+    <ng-template pTemplate="end">
+      <div>
+        <button
+          (click)="roleModelService.role = 'admin'"
+          pButton
+          pRipple
+          label="Роль администратора"
+        ></button>
+        <button
+          (click)="roleModelService.role = 'user'"
+          pButton
+          pRipple
+          label="Роль пользователя"
+        ></button>
+      </div>
+    </ng-template>
+  </p-menubar>
+</div>
+<div>
+  <p>Текущая роль: {{ roleModelService.role }}</p>
+  <router-outlet></router-outlet>
+</div>
+<div class="btn">
+  <p-button label="На главную" routerLink="/"></p-button>
+</div>

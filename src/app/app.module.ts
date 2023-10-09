@@ -3,16 +3,42 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PostPageComponent } from './components/post-page/post-page.component';
+import { PostItemComponent } from './components/post-item/post-item.component';
+import { HttpClientModule }   from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { MenubarModule } from 'primeng/menubar';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { RoleModelService } from './services/role-model.service';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { EditPageComponent } from './components/edit-page/edit-page.component';
+import { CardModule } from 'primeng/card';
+import { KeyFilterModule } from 'primeng/keyfilter';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostPageComponent,
+    PostItemComponent,
+    ErrorPageComponent,
+    EditPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    CommonModule,
+    MenubarModule,
+    SelectButtonModule,
+    TableModule,
+    ButtonModule,
+    CardModule,
+    InputTextModule    
   ],
-  providers: [],
+  providers: [RoleModelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
