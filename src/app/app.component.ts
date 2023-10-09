@@ -2,10 +2,6 @@ import { RoleModelService } from 'src/app/services/role-model.service';
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
-interface IOptions {
-  label: string
-  value: string
-}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -29,7 +25,4 @@ export class AppComponent {
       }
     ];
   }
-
-
-
 }

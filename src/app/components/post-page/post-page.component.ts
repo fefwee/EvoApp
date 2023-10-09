@@ -12,7 +12,7 @@ export class PostPageComponent implements OnInit {
 
   public posts: IPost[] = [];
 
-  constructor(private roleModelService: RoleModelService,) { }
+  constructor(private roleModelService: RoleModelService) { }
 
   ngOnInit(): void {
     this.roleModelService.getPost().subscribe({

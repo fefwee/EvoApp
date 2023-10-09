@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostPageComponent } from './components/post-page/post-page.component';
 import { PostItemComponent } from './components/post-item/post-item.component';
-import { HttpClientModule }   from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { MenubarModule } from 'primeng/menubar';
 import { TableModule } from 'primeng/table';
@@ -15,8 +15,8 @@ import { RoleModelService } from './services/role-model.service';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { EditPageComponent } from './components/edit-page/edit-page.component';
 import { CardModule } from 'primeng/card';
-import { KeyFilterModule } from 'primeng/keyfilter';
 import { InputTextModule } from 'primeng/inputtext';
+import { roleAccessGuard } from './guards/role-access.guard';
 
 @NgModule({
   declarations: [
@@ -36,9 +36,14 @@ import { InputTextModule } from 'primeng/inputtext';
     TableModule,
     ButtonModule,
     CardModule,
-    InputTextModule    
+    InputTextModule
   ],
-  providers: [RoleModelService],
+  providers: [RoleModelService, {
+    provide:
+      'roleAccessGuard',
+    useValue:
+      roleAccessGuard
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

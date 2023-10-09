@@ -26,13 +26,11 @@ const routes: Routes = [
         component: EditPageComponent
       }
     ]
-  }
-  ,
+  },
   {
-    path: '**',
+    path: 'error',
     component: ErrorPageComponent
   }
-
 ];
 
 @NgModule({
