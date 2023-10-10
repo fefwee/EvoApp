@@ -4,7 +4,6 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
-  HttpParams
 } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
@@ -16,9 +15,9 @@ export class TodoInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     console.log(request);
-    request = request.clone({
-      params: new HttpParams().set('id', '1')
-    })
-    return next.handle(request);
+    const url = '/1';
+    const cloneReq = request.clone({ url: request.url + url });
+    console.log(cloneReq);
+    return next.handle(cloneReq);
   };
 }

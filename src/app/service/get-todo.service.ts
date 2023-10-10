@@ -10,8 +10,8 @@ export class GetTodoService {
 
   constructor(private http: HttpClient) { }
 
-  public getTodo(): Observable<ItodoItem[]> {
-    return this.http.get<ItodoItem[]>('https://jsonplaceholder.typicode.com/todos');
+  public getTodo(): Observable<ItodoItem> {
+    return this.http.get<ItodoItem>('https://jsonplaceholder.typicode.com/todos');
   };
 
 }

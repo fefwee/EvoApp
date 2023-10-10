@@ -11,13 +11,18 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
 
-  public todos: ItodoItem[] = [];
+  public todos: ItodoItem = {
+    userId: 0,
+    id: 0,
+    title: '',
+    completed: false
+  };
 
   constructor(private todoService: GetTodoService) { }
 
   ngOnInit(): void {
     this.todoService.getTodo().subscribe({
-      next: (response:ItodoItem[]) => {
+      next: (response:ItodoItem) => {
         this.todos = response;
       },
       error: (error: HttpErrorResponse) => {
