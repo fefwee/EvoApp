@@ -22,11 +22,11 @@ export class AppComponent implements OnInit {
     })
   }
 
-  public createTodo = {
-    title: null,
+  public createTodo: TodoInterface = {
+    todoTitle: null,
   };
 
   public addTodo() {
-    this.store.dispatch(new AddTodo({ todoTitle: this.createTodo.title }));
+    this.store.dispatch(new AddTodo({ todoTitle: this.createTodo.todoTitle }));
   };
 }
