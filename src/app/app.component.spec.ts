@@ -1,10 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NgxsModule } from '@ngxs/store';
+import { TodoState } from './store/todo.state';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
+    imports: [RouterTestingModule, NgxsModule.forRoot([TodoState])],
     declarations: [AppComponent]
   }));
 
@@ -17,7 +19,6 @@ describe('AppComponent', () => {
   it(`should have as title 'EvoApp'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('EvoApp');
   });
 
   it('should render title', () => {

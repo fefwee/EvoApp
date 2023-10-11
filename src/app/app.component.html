@@ -1,0 +1,49 @@
+<div class="card flex justify-content-center container">
+  <div class="sub_container">
+    <input
+      type="text"
+      pInputText
+      placeholder="text..."
+      minlength="2"
+      maxlength="10"
+      required
+      #todo="ngModel"
+      name="name"
+      [(ngModel)]="createTodo.title"
+      type="text"
+    />
+    <p-button
+      label="Create Todo"
+      [disabled]="todo.invalid || undefined"
+      (onClick)="addTodo()"
+    ></p-button>
+
+    <div *ngIf="todo.invalid && (todo.dirty || todo.touched)">
+      <div *ngIf="todo.hasError('minlength')">
+        <small id="username-help" class="p-error"> Мин длина 2 символа </small>
+      </div>
+      <div *ngIf="todo.hasError('required')">
+        <small id="username-help" class="p-error">
+          Поле должно быть заполнено
+        </small>
+      </div>
+    </div>
+
+    <div class="card">
+      <h1>Todo List</h1>
+      <p-table [value]="todos" [tableStyle]="{ 'max-width': '100%' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Todo</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-todo let-rowIndex="rowIndex">
+          <tr>
+            <td>{{ rowIndex + 1 + ")" }} {{ todo.todoTitle }}</td>
+            <td></td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

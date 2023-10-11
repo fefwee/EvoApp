@@ -1,0 +1,16 @@
+.container {
+    max-width: 100%l;
+    margin: 30px auto;
+    min-height: 300px;
+    box-shadow: 1px 4px 3px rgb(188, 183, 183);
+    border-radius: 10px;
+}
+
+input {
+    width: 90%;
+    margin: 20px 10px 0 0;
+}
+
+.sub_container {
+    padding: 10px;
+}
