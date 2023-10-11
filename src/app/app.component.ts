@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     title: null,
   };
 
-  addTodo() {
+  public addTodo() {
     this.store.dispatch(new AddTodo({ todoTitle: this.createTodo.title }));
   };
 }
